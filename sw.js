@@ -1,0 +1,1 @@
+self.addEventListener('install',e=>e.waitUntil(caches.open('ppfc-v1').then(c=>c.addAll(['./','./logo.jpg','./icon.png','./manifest.json']))));self.addEventListener('fetch',e=>{if(e.request.method==='GET'&&new URL(e.request.url).origin===self.location.origin)e.respondWith(fetch(e.request).catch(()=>caches.match(e.request)))});
